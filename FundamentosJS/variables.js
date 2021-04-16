@@ -1,15 +1,15 @@
 // ==== Tipos de datos ====
 // Boolean => true or fale
-var myBoolean = true
+var myBoolean = true;
 // String
-var myString = "Luis"
+var myString = "Luis";
 // Number => especifica el tipo del número
-var myIntNumber = 27
-var myFloatNumber = 1.20
+var myIntNumber = 27;
+var myFloatNumber = 1.20;
 // Undefined => undefined
-var myUndefined = undefined
+var myUndefined = undefined;
 //  Null => null
-var myNull = null
+var myNull = null;
 // Objeto => Contienen una estructura de datos que mantienen un contexto "Diccionario"
 var myObject = {
     nombre: "Luis",
@@ -19,33 +19,34 @@ var myObject = {
 var myArray = ["Manzana","Pera"]
 
 // Camel Case: la palabra empieza con minuscula, la segunda con mayuscula
-var impuestosAnuales = 200000
+var impuestosAnuales = 200000;
 // Snake Case:  se juntan las pabras con _
-var impuestos_anuales = 200000
+var impuestos_anuales = 200000;
 
 /**
  * Ejercicio 1
  */
 
 // String
-var firstname = "Luis"
-var lastname = "Dominguez"
-var company = "Tetra Pak"
+var firstname = "Luis";
+var lastname = "Dominguez";
+var company = "Tetra Pak";
+
 // Number
-var age = 33
-var phone = 4423227630
-var birthyear = 1987
+var age = 33;
+var phone = 4423227630;
+var birthyear = 1987;
 // Undefined
-var gender = undefined
-var fruit = undefined
-var runningtime = undefined
+var gender = undefined;
+var fruit = undefined;
+var runningtime = undefined;
 // Null
-var hobbie = null
-var webapp = null
-var work = null
+var hobbie = null;
+var webapp = null;
+var work = null;
 // Boolean
-var married = false
-var single = true
+var married = false;
+var single = true;
 // Object
 var workobject ={
     workhour: 8,
@@ -76,18 +77,3 @@ console.log("Tipo de dato hobbie =====>", typeof hobbie)
 console.log("Tipo de dato runningtime =====>", typeof runningtime)
 console.log("Tipo de dato age =====>", typeof age)
 console.log("Tipo de dato firstname =====>", typeof firstname)
-
-/**
- * Ejercicio 3
- */
-
-var a = 5;
-var b = 10;
-var c = 15;
-
-console.log(a+b*c)
-console.log((a+b)*c)
-console.log(b/a*c)
-console.log(b/(a*c))
-console.log(a-b+c)
-console.log(a-(b+c))
