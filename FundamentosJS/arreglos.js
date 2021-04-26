@@ -93,7 +93,7 @@ Ejercicio 1
 */
 
 console.log(`
-Reliacer Tarea 1 multiplicar posiciones de un arreglo, el primero por el ultimo y así consecutivamente
+Realizar Tarea 1 multiplicar posiciones de un arreglo, el primero por el ultimo y así consecutivamente
 `)
 
 var tareaSolution1 = tareaNumbers1(numbersInput)
@@ -126,14 +126,21 @@ console.log(tareaSolution1)
     Hasta llegar al 10*10
 */
 
+console.log(`
+Realizar Tarea tablas de multiplicacion
+`)
+
 var tareaSolution2 = tareaNumbers2(numbersInput)
 
 function tareaNumbers2 (numbers){
     var multiplyNumbers = []
-    for(var i = 0 ; i < numbers.length; i++){
-        multiplyNumbers.push(numbers[i]*(numbers[i]))
+    for(let i = 0 ; i < numbers.length; i++){
+        for (let j = 0; j < numbers.length; j++){
+            multiplyNumbers.push(numbers[i]*numbers[j]);
+        }
     }
     return multiplyNumbers
 }
 
 console.log(tareaSolution2)
+
