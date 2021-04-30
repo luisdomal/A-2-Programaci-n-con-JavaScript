@@ -101,7 +101,7 @@ var tareaSolution1 = tareaNumbers1(numbersInput)
 function tareaNumbers1 (numbers){
     var multiplyNumbers = []
     var j = numbers.length-1
-    for(var i = 0 ; i < numbers.length; i++, j--){
+    for(var i = 0 ; i < numbers.length/2; i++, j--){
         multiplyNumbers.push(numbers[i]*(numbers[j]))
     }
     return multiplyNumbers
@@ -143,4 +143,21 @@ function tareaNumbers2 (numbers){
 }
 
 console.log(tareaSolution2)
+
+
+console.log(`
+Imprimiendo con datos agregando texto por ejemplo: 1 x 1 = 1
+`)
+
+var tareaSolution3 = tareaNumbers3(numbersInput)
+
+function tareaNumbers3 (numbers){
+    var multiplyNumbers = []
+    for(let i = 0 ; i < numbers.length; i++){
+        for (let j = 0; j < numbers.length; j++){
+            console.log(`${numbers[i]} x ${numbers[j]} = ${numbers[i]*numbers[j]}`)
+        }
+    }
+    return multiplyNumbers
+}
 
