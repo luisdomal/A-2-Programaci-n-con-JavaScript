@@ -62,17 +62,24 @@ _________________________________
  3.- Agregar dentro un div con ID"Container"
  */
 
-document.write("<div id='container'>")
-    document.write("<table border='2' bg>")
-        document.write("<tr>") 
-            document.write("<td>1</td>")
-            document.write("<td>1</td>")
-            document.write("<td>1</td>")
-        document.write("</tr>")    
-        document.write("<tr>")
-            document.write("<td>1</td>")
-            document.write("<td>1</td>")
-            document.write("<td>1</td>")
-        document.write("</tr>")
-    document.write("</table>")
-document.write("</div>")
+
+const myNewDiv = document.createElement("div")
+const myNewTable = document.createElement("table")
+myNewDiv.appendChild(myNewTable)
+document.body.appendChild(myNewDiv)
+
+myNewDiv.setAttribute("id","container")
+myNewTable.setAttribute("id","myTable")
+
+function myCreateFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "";
+  cell2.innerHTML = "";
+}
+
+function myDeleteFunction() {
+  document.getElementById("myTable").deleteRow(0);
+}
