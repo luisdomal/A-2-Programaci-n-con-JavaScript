@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Site</title>
-    <style>
+    <!-- <style>
         table, td{
             width: 200px;
             height: 50px;
@@ -14,9 +14,17 @@
             background-color: wheat;
             border-collapse: collapse;
         }
-    </style>
+    </style> -->
 </head>
-<body>
+<br>
+
+    <span>Altura: </span>
+    <input type="number" id="height">
+
+    <span>Peso: </span>
+    <input type="number" id="weight">
+
+    <h2 id="resultIMC"></h2>
 
     <h3>One</h3>
     <h3>Two</h3>
@@ -26,11 +34,24 @@
     <p>Two</p>
     <p>Three</p>
     
-    <button onclick="myCreateFunction()">Create row</button>
-    <button onclick="myDeleteFunction()">Delete row</button>
+    <h1 id="myTitle">My Title</h1>
+
+    <!-- Botones creados de la tarea para hacer una tabla con funcion-->
+    <!-- <button onclick="myCreateFunction()">Create row</button>
+    <button onclick="myDeleteFunction()">Delete row</button> -->
+
+    <label id="globo">🎈</label>
+
+
+    <br></br>
+    
+    <button id = "bigger"> + </button>
+    <button id = "smaller"> - </button>
+
 
 
 
     <script src="./dom.js"></script>
+    <script src="./eventlisteners.js"></script>
 </body>
 </html>

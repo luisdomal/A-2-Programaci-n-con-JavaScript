@@ -1,3 +1,5 @@
+
+
 // Programación orientada a objetos
 // Paradigma: Es un modelo a seguir para resolver una problematica.
 
@@ -53,7 +55,7 @@ console.log(luisDom)
 
 // Clase Padre
 
-class LivingBeing {
+export class LivingBeing {
     constructor(height, weight){
         this.height = height
         this.weight = weight

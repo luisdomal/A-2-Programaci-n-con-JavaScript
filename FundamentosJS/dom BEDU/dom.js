@@ -62,24 +62,75 @@ _________________________________
  3.- Agregar dentro un div con ID"Container"
  */
 
+// La tarea realizada por mi
 
-const myNewDiv = document.createElement("div")
-const myNewTable = document.createElement("table")
-myNewDiv.appendChild(myNewTable)
-document.body.appendChild(myNewDiv)
+// const myNewDiv = document.createElement("div")
+// const myNewTable = document.createElement("table")
+// myNewDiv.appendChild(myNewTable)
+// document.body.appendChild(myNewDiv)
 
-myNewDiv.setAttribute("id","container")
-myNewTable.setAttribute("id","myTable")
+// myNewDiv.setAttribute("id","container")
+// myNewTable.setAttribute("id","myTable")
 
-function myCreateFunction() {
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(0);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = "";
-  cell2.innerHTML = "";
-}
+// function myCreateFunction() {
+//   var table = document.getElementById("myTable")
+//   var row = table.insertRow(0)
+//   var cell1 = row.insertCell(0)
+//   var cell2 = row.insertCell(1)
+//   cell1.innerHTML = ""
+//   cell2.innerHTML = ""
+// }
 
-function myDeleteFunction() {
-  document.getElementById("myTable").deleteRow(0);
-}
+// function myDeleteFunction() {
+//   document.getElementById("myTable").deleteRow(0)
+// }
+
+const table = document.createElement("table") // <table></table>
+const tableHead = document.createElement("thead") // <thead></thead>
+const headerArray = [1, 2]
+
+headerArray.forEach((num) => {
+  const headCell = document.createElement("th") // <th></th>
+  const textNode = document.createTextNode(num) // ""
+  headCell.appendChild(textNode) // <th>""</th>
+  tableHead.appendChild(headCell) // <thead><th>""</th> <th>""</th> <th>""</th></thead>
+})
+
+table.appendChild(tableHead) // <table> <thead>  <th>""</th> <th>""</th> <th>""</th>  </thead> </table>
+
+const tbody = document.createElement("tbody") // <tbody></tbody>
+
+const rowsArray = [1, 2, 3]
+
+
+rowsArray.forEach(() => {
+  // Primer foreach ayuda a agregar info en las filas
+  const row = document.createElement("tr") // <tr></tr>
+
+  // segundo foreach ayuda a poner la info en las columnas
+  headerArray.forEach((num2) => {
+    const cell = document.createElement("td") // <td></td>
+    const textNode = document.createTextNode(num2) // "1"
+    cell.appendChild(textNode) // <td>1</td>
+    row.appendChild(cell) // <tr><td>1</td></tr>
+  })
+
+  tbody.appendChild(row) //  <tbody><tr><td>1</td></tr></tbody>
+})
+
+
+table.appendChild(tbody) // <table> <thead>  <th>""</th> <th>""</th> <th>""</th>  </thead> <tbody><tr><td>1</td></tr></tbody> </table>
+
+
+table.setAttribute("border", "5px") // Agrega atributos
+table.style.border = "1px solid blue"
+table.style.width = "500px"
+table.style.height = "300px"
+
+table.setAttribute("id", "my-table")
+
+// "table": {
+//   border: "1px solid blue"
+// }
+
+document.body.appendChild(table)
