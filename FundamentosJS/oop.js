@@ -55,14 +55,14 @@ console.log(luisDom)
 
 // Clase Padre
 
-export class LivingBeing {
+class LivingBeing {
     constructor(height, weight){
         this.height = height
         this.weight = weight
     }
 
     calculoIMC (){
-        return `Mi indice de masa corporal es ${this.weight / (this.height*this.height)}`
+        return this.weight / (this.height*this.height)
     }
 }
 
@@ -86,8 +86,9 @@ class Person3 extends LivingBeing {
     edad(){
         this.counterEdad++
         const actualYear = new Date().getFullYear()
-        const birthYear = new Date(this.age).getFullYear()
-        return `Tengo ${actualYear - birthYear} años de edad`
+        const birthYear = this.age
+        // return `Tengo ${actualYear - birthYear} años de edad`
+        return actualYear-birthYear
     }
     // Incrementar el valor cada vez que se llame
     incrementarCounter(){
@@ -111,9 +112,9 @@ class Person3 extends LivingBeing {
 
 // new crea una instancia de una clase
 
-const luisDomAl = new Person3("Luis","12/19/1987", 1.74, 69)
+const luisDomAl = new Person3("Luis",1987, 1.74, 69)
 console.log(luisDomAl.saludo())
-console.log(luisDomAl.edad())
+console.log(`test ${luisDomAl.edad()}`)
 
 
 luisDomAl.incrementarCounter()

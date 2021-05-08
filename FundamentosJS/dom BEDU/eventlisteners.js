@@ -62,22 +62,45 @@ small.addEventListener("mouseover", () =>{
 */
 // Como sacar valores de los inputs
 
-
+const name = document.getElementById("name")
+const birthDate = document.getElementById("birthDate")
 const height = document.getElementById("height")
 const weight = document.getElementById("weight")
 const resultIMC = document.getElementById("resultIMC")
-let valueHeight = 0
-let valueWeight = 0
+let person = new Person3("", 2021, height, weight)
+
+const mensajeIMC = (p) => {
+    let IMC = p.IMC()
+    if (IMC < 18.5)
+        return `Hola ${p.name} tienes ${p.edad()} años de edad y tu IMC es de: ${IMC.toFixed(2)} tienes insuficiencia ponderal`
+    if (IMC <= 24.9)
+        return `Hola ${p.name} tienes ${p.edad()} años de edad y tu IMC es de: ${IMC.toFixed(2)} tienes intervalo normal`
+    if (IMC <= 29.9)
+        return `Hola ${p.name} tienes ${p.edad()} años de edad y tu IMC es de: ${IMC.toFixed(2)} tienes sobrepeso`
+    if (IMC >= 30.0)
+        return `Hola ${p.name} tienes ${p.edad()} años de edad y tu IMC es de: ${IMC.toFixed(2)} tienes obesidad`
+}
+
+
+name.addEventListener("input", (event) =>{
+    person.name = event.target.value
+    console.log("Event tiene esto ===>", typeof person.name)
+})
+
+birthDate.addEventListener("input", (event) =>{
+    person.age = +event.target.value
+    console.log("Event tiene esto ===>", typeof person.age)
+})
 
 height.addEventListener("input", (event) =>{
-    valueHeight = Number(event.target.value)
-    console.log("Event tiene esto ===>", typeof valueHeight)
-    resultIMC.textContent = calculoIMC
+    person.height = Number(event.target.value)
+    console.log("Event tiene esto ===>", typeof person.height)
+    resultIMC.textContent = mensajeIMC(person)
 })
 
 weight.addEventListener("input", (event) =>{
-    valueWeight = Number(event.target.value)
-    console.log("Event tiene esto ===>", typeof valueWeight)
-    resultIMC.textContent = calculoIMC
+    person.weight = Number(event.target.value)
+    console.log("Event tiene esto ===>", typeof person.weight)
+    resultIMC.textContent = mensajeIMC(person)
 })
 
