@@ -16,7 +16,10 @@ document.getElementById("myTitle").addEventListener("click", () =>{
 */
 
 const labelGlobo = document.getElementById("globo")
-let balloonSize = 10
+let balloonSize = +localStorage.getItem('balloonStorage')
+
+// Siempre considerar establecer el tamaño de la fuente del css para inicializar con el valor guardado de lo contario toma el valor por default
+labelGlobo.style.cssText = `font-size: ${balloonSize}px`
 
 
 labelGlobo.addEventListener("click", () =>{
@@ -44,13 +47,16 @@ big.addEventListener("mouseover", () =>{
     balloonSize += 5
     console.log("llamando globo", balloonSize)
     labelGlobo.style.cssText = `cursor: pointer; font-size: ${balloonSize}px`
+    localStorage.setItem('balloonStorage',balloonSize)
 })
 
 small.addEventListener("mouseover", () =>{
     balloonSize -= 5
     console.log("llamando globo", balloonSize)
     labelGlobo.style.cssText = `cursor: pointer; font-size: ${balloonSize}px`
+    localStorage.setItem('balloonStorage',balloonSize)
 })
+
 
 
 /* Ejercio 3
@@ -103,4 +109,32 @@ weight.addEventListener("input", (event) =>{
     console.log("Event tiene esto ===>", typeof person.weight)
     resultIMC.textContent = mensajeIMC(person)
 })
+
+//Tomando datos de in input como un array
+
+const arrayInput = document.getElementById("Array")
+const arrayText = document.getElementById("resultArray")
+arrayInput.addEventListener("input", (event) =>{
+    // Convierte el event.target.value a un arreglo cuando los valores esten separados por ","
+    const myArray = event.target.value.split(",")
+    // Shorcut para convertir strings a numeros usando map
+    // const convertArray = myArray.map(Number)
+    const convertArray = myArray.map((num)=> Number(num))
+    // Revisamos si no es array, mostramos un error en la etiqueta
+    if(!Array.isArray(myArray) || myArray.length ===1){
+        arrayText.textContent = "No es un array"
+    }else{
+    // Si es array entonces regresamos el resultado de la funcion
+    arrayText.textContent = filterTarea(convertArray)
+    }
+})
+
+
+/* Actividad localstorage
+
+    1.- En el event listener de inflar globo, guardar en local storage si ya infló el globo
+    2.- si al refrescar la pantalla el globo se había inflado, mantener el tamaño en el que estaba
+*/
+
+
 
